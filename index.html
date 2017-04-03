@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+<head>
+<style>
+	body { 
+		height:1000px;
+		background-image:url(bg.png);
+		z-index:-20;
+	}
+	.nav {
+		font-family:grease;
+		font-size:35px;
+		position:absolute;
+		color:black;
+	}
+	#back, #midback, #front {
+		position:absolute;
+		width:1415px;
+		height:997px;
+		}
+	#back {
+		background-image:url(back.png);
+		top:0px;
+		z-index:-30;
+	}
+	#midback {
+		background-image:url(midback.png);
+		top:0px;
+		z-index:-20;
+	}
+	#front {
+		background-image:url(front.png);
+		top:0px;
+		z-index:-10;
+	}
+	#banner {
+		background-color:black;
+		width:1200px;
+		height:150px;
+		position:absolute;
+		z-index:10;
+		margin-top:20px;
+		margin-left:105px;
+		border-radius:20px;
+		border:5px solid white;
+	}
+	#dash, #rash, #stash, #bash {
+		background-color:white;
+		width:150px;
+		height:50px;
+		border-radius:20px;
+		z-index:0;
+		position:absolute;
+		top:105px;
+		transition:.4s;
+		box-shadow: 5px 5px 6px black;
+		}
+	#dash {
+		margin-left:205px;
+	}
+	#rash {
+		margin-left:480px;
+	}
+	#stash {
+		margin-left:755px;
+	}
+	#bash {
+		margin-left:1030px;
+	}
+	#lorem {
+		left:15px;
+		top:8px;
+	}
+	#ipsum {
+		left:15px;
+		top:8px;
+	}
+	#dolor {
+		left:20px;
+		top:8px;
+	}
+	#sit {
+		left:46px;
+		top:8px;
+	}
+	#bar {
+		width:0px;
+		transition:.2s ease;
+		height:5px;
+		background-color:black;
+		position:absolute;
+		left:500px;
+		top:300px;
+		border-radius:9px;
+		
+	}
+	#vee {
+		position:absolute;
+		left:180px;
+		width:40px;
+	}
+	button {
+		position:absolute;
+		left:163px;
+	}
+	#here {
+		background-color:black;
+		border: 0px solid white;
+		width:400px;
+		height:300px;
+		position:absolute;
+		left:510px;
+		transition:1s;
+		top:300px;
+		border-radius:5px;
+		box-shadow:-2px 0px 4px;
+		opacity:1;
+		z-index:-3;
+	}
+	#bere {
+		background-color:black;
+		border: 0px solid white;
+		width:400px;
+		height:300px;
+		position:absolute;
+		left:500px;
+		transition:1s;
+		top:300px;
+		border-radius:5px;
+		box-shadow:-2px 0px 4px;
+		z-index:-4;
+	}
+	#were {
+		background-color:black;
+		border: 0px solid white;
+		width:400px;
+		height:300px;
+		position:absolute;
+		left:490px;
+		transition:1s;
+		top:300px;
+		border-radius:5px;
+		z-index:-5;
+	}
+	img { 
+	border-radius:5px;}
+	
+	#lefter {
+		position:absolute;
+		top:350px;
+		left:200px;
+		width:30px;
+	}
+	#righter {
+		position:absolute;
+		left:950px;
+		top:350px;
+	}
+	#project {
+		display:none;
+		z-index:1000;
+		position:absolute;
+		top:300px;
+		left:56px;
+	}
+	
+</style>
+<script>
+	function parallax(){
+	backer=document.getElementById('back');
+	midbacker=document.getElementById('midback');
+	fronter=document.getElementById('front');
+	
+	scrolly = window.pageYOffset;
+		
+	backer.style.top = 0+(scrolly*.9)+"px";
+	midbacker.style.top = 0+(scrolly*.5)+"px";
+	fronter.style.top = 0+(scrolly*.2)+"px";
+	}
+	function dropdown(){
+		dasher=document.getElementById('dash');
+		rasher=document.getElementById('rash');
+		stasher=document.getElementById('stash');
+		basher=document.getElementById('bash');
+		
+		dasher.style.top=185+"px";
+		rasher.style.top=185+"px";
+		stasher.style.top=185+"px";
+		basher.style.top=185+"px";
+		}
+	lore=document.getElementById('lorem');
+	ipsu=document.getElementById('ipsum');
+	dolo=document.getElementById('dolor');
+	si=document.getElementById('sit');
+	function hoved(){
+		lore.style.color='#6d0404';
+	}
+		
+		
+		function hovest(){
+		lore.style.color='black';
+		}
+	function goved(){
+		ipsu.style.color='#6d0404';
+	}
+	function govest(){
+		ipsu.style.color='black';
+		}
+	function foved(){
+		dolo.style.color='#6d0404';
+	}
+	function fovest(){
+		dolo.style.color='black';
+		}
+	function eoved(){
+		si.style.color='#6d0404';
+	}
+	function eovest(){
+		si.style.color='black';
+		}
+	width=0;
+	height=5;
+		function expander(){
+			stret=document.getElementById('bar');
+		if (stret.style.display == 'none') {
+        stret.style.display = 'block';
+    } else {
+        stret.style.display = 'none';
+    }
+			
+		}
+	position=0;
+	function moving(){
+		yt=document.getElementById('here');
+		fb=document.getElementById('bere');
+		tw=document.getElementById('were');
+		
+		if(yt.style.left==510+"px"){
+			yt.style.left=490+"px";
+			yt.style.zIndex=500;
+		}else if(yt.style.left==490+"px"){
+			yt.style.left=500+"px";
+			yt.style.zIndex=600;
+		}else {
+			yt.style.left=510+"px";
+			yt.style.zIndex=700;
+		}
+		
+		if(fb.style.left==510+"px"){
+			fb.style.left=490+"px";
+			fb.style.zIndex=500;
+		}else if(yt.style.left==490+"px"){
+			fb.style.left=500+"px";
+			fb.style.zIndex=600;
+		}else {
+			fb.style.left=510+"px";
+			fb.style.zIndex=700;
+		}
+		
+		if(tw.style.left==510+"px"){
+			tw.style.left=490+"px";
+			tw.style.zIndex=500;
+		}else if(tw.style.left==490+"px"){
+			tw.style.left=500+"px";
+			tw.style.zIndex=600;
+		}else {
+			tw.style.left=510+"px";
+			tw.style.zIndex=700;
+		}
+		function toggler(){
+			foo = document.getElementById('project');
+    		if (foo.style.display = 'none') {
+				foo.style.display = 'block';
+    		} else {
+        	foo.style.display = 'none';
+    		}
+		}
+	}
+	setInterval(wider,50);
+	
+	</script>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body onscroll="parallax()">
+<div id="back"></div>
+<div id="midback"></div>
+<div id="front"></div>
+<div id="banner" onmouseover="dropdown()">
+	<img src="banner.png">
+</div>
+<div id="dash">
+<span class = "nav" id="lorem" onMouseOver="hoved()" onMouseOut="hovest()">Lorem</span>
+</div>
+<div id="rash">
+	<span class = "nav" id="ipsum" onMouseOver="goved()" onMouseOut="govest()">Ipsum</span>
+</div>
+<div id="stash">
+	<span class = "nav" id="dolor" onMouseOver="foved()" onMouseOut="fovest()">Dolor</span>
+</div>
+<div id="bash">
+	<span class = "nav" id="sit" onMouseOver="eoved()" onMouseOut="eovest()">Sit</span>
+	</div>
+<button onclick="toggler()">Lorem Ipsum</button>
+<div id="project">
+	<img src="placeholder.png">
+	<img src="placeholder.png">
+	<img src="placeholder.png">
+</div>
+
+</body>
+</html>
